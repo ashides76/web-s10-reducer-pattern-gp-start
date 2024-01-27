@@ -10,6 +10,7 @@ const intialState = {
 
 
 // {type: CHANGE_LABEL, payload: 'foo'} // action
+// was there a reason to use state and action as parms?
 const reducer = (state, action) => {
   console.log('state:', state);
   console.log('action', action);
@@ -44,6 +45,7 @@ export default function TodoForm({createNewToDo}) {
 
   const onNewToDo = env => {
     env.preventDefault();
+    // why use state. and not dis
     createNewToDo(state.todoLable, state.todoIsCompleted)
     resetForm();
   }
