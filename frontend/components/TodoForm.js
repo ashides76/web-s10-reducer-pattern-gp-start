@@ -31,10 +31,12 @@ export default function TodoForm({createNewToDo}) {
   const [state, dispatch] = useReducer(reducer, intialState);
 
   const onLableChange = env => {
+    // debugger
     dispatch({ type: CHANGE_LABEL, payload: env.target.value })
   };
 
   const onIsCompleted = env => {
+    // debugger
     dispatch({ type: CHANGE_IS_COMPLETED, payload: env.target.checked })
   };
 
@@ -45,7 +47,7 @@ export default function TodoForm({createNewToDo}) {
 
   const onNewToDo = env => {
     env.preventDefault();
-    // why use state. and not dis
+    // why use state and not dispatch?
     createNewToDo(state.todoLable, state.todoIsCompleted)
     resetForm();
   }
